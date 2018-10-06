@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database:
+    image: dbpg:v1
+    build:
+      context: ./pg
+      dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_HOST=database
+      - POSTGRES_DB=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
