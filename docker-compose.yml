@@ -8,10 +8,10 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_HOST: database
-      - POSTGRES_DB: db
-      - POSTGRES_USER: postgres
-      - POSTGRES_PASSWORD: 1234
+      POSTGRES_HOST: 'localhost'
+      POSTGRES_DB: 'db'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: '1234'
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
   pgadmin:
@@ -19,5 +19,5 @@ services:
     ports:
       - "5050:5050"
     environment:
-      - PGADMIN_DEFAULT_EMAIL: rub21@gmail.com
-      - PGADMIN_DEFAULT_PASSWORD: 1234
+      PGADMIN_DEFAULT_EMAIL: 'rub21@gmail.com'
+      PGADMIN_DEFAULT_PASSWORD: '1234'
